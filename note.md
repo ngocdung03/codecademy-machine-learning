@@ -67,3 +67,6 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_s
 # test_size: the proportion of the dataset to include in the test split
 # random_state
 ```
+- We can scale the size of the step by multiplying the gradient by a *learning rate*.
+- Convergence is when the loss stops changing (or changes very slowly) when parameters are changed.
+- Finding the absolute best learning rate is not necessary for training a model. You just have to find a learning rate large enough that gradient descent converges with the efficiency you need, and not so large that convergence never happens.
