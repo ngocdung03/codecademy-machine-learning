@@ -1,4 +1,4 @@
-"# Codecademy - Learn the Basics of Machine Learning"
+# Codecademy - Learn the Basics of Machine Learning
  Applying Python for building machine learning models.
 ### 1. Linear Regression
  Given a set of points, find a line that fits the data best.
