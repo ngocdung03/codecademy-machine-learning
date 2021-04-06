@@ -70,3 +70,11 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_s
 - We can scale the size of the step by multiplying the gradient by a *learning rate*.
 - Convergence is when the loss stops changing (or changes very slowly) when parameters are changed.
 - Finding the absolute best learning rate is not necessary for training a model. You just have to find a learning rate large enough that gradient descent converges with the efficiency you need, and not so large that convergence never happens.
+
+##### Multiple Linear Regression
+- StreetEasy dataset: https://www.codecademy.com/content-items/d19f2f770877c419fdbfa64ddcc16edc
+    - manhattan.csv
+    - brooklyn.csv
+    - queens.csv
+- When trying to evaluate the accuracy of our multiple linear regression model, one technique we can use is Residual Analysis.
+- sklearn‘s linear_model.LinearRegression comes with a .score() method that returns the coefficient of determination R² of the prediction.
