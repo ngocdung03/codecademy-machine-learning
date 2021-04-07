@@ -77,4 +77,4 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_s
     - brooklyn.csv
     - queens.csv
 - When trying to evaluate the accuracy of our multiple linear regression model, one technique we can use is Residual Analysis.
-- sklearn‘s linear_model.LinearRegression comes with a .score() method that returns the coefficient of determination R² of the prediction.
+- sklearn‘s linear_model.LinearRegression comes with a .score() method that returns the coefficient of determination R² of the prediction. 
