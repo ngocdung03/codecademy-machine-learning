@@ -121,3 +121,45 @@ def build_tree(data, labels):
 
 tree = build_tree(car_data, car_labels)
 #print_tree(tree)
+
+## Classifying New Data
+from tree import *
+import operator
+
+test_point = ['vhigh', 'low', '3', '4', 'med', 'med']
+# print_tree(tree)
+# Notice that the tree now knows which feature was used to split the data. This new information is contained in the Leaf and Internal_Node classes. 
+
+def classify(datapoint, tree):
+  # Check to see if we're at a leaf
+  if isinstance(tree, Leaf):
+    return max(tree.labels.items(), key=operator.itemgetter(1))[0] #return the label with the highest count
+  # find the brach that corresponds to the datapoint
+  value = datapoint[tree.feature]  # tree.feature contains the index of the feature that we’re splitting on
+  for branch in tree.branches:
+    if branch.value == value:
+    # We want to now recursively call classify() on that branch:
+      return classify(datapoint, branch)
+
+print(classify(test_point, tree))
+
+## Decision Trees in scikit-learn
+from cars import training_points, training_labels, testing_points, testing_labels
+from sklearn.tree import DecisionTreeClassifier
+
+print(training_points[0])
+print(training_labels[0])
+
+classifier = DecisionTreeClassifier()
+classifier.fit(training_points, training_labels)
+print(classifier.score(testing_points, testing_labels))
+
+# Prune the tree by setting max_depth
+from cars import training_points, training_labels, testing_points, testing_labels
+from sklearn.tree import DecisionTreeClassifier
+
+classifier = DecisionTreeClassifier(random_state = 0, max_depth=11)
+classifier.fit(training_points, training_labels)
+print(classifier.score(testing_points, testing_labels))
+# Find the depth of the tree
+print(classifier.tree_.max_depth)

@@ -78,3 +78,16 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_s
     - queens.csv
 - When trying to evaluate the accuracy of our multiple linear regression model, one technique we can use is Residual Analysis.
 - sklearn‘s linear_model.LinearRegression comes with a .score() method that returns the coefficient of determination R² of the prediction. 
+- sklearn.tree: DecisionTreeClassifier class
+    - when we built our tree from scratch, our data points contained strings like "vhigh" or "5more". When creating the tree using scikit-learn, it’s a good idea to map those strings to numbers
+```py
+classifier = DecisionTreeClassifier()
+```
+- Find accuracy:
+```py
+print(classifier.score(test_data, test_labels))
+```
+- Limitation:
+    - Isn't always globally optimal
+    - Greedy:  find the feature that will result in the largest information gain right now and split on that feature. We never consider the ramifications of that split further down the tree. 
+    - potentially overfit -> prune the tree
