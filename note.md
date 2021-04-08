@@ -91,3 +91,11 @@ print(classifier.score(test_data, test_labels))
     - Isn't always globally optimal
     - Greedy:  find the feature that will result in the largest information gain right now and split on that feature. We never consider the ramifications of that split further down the tree. 
     - potentially overfit -> prune the tree
+- Flags dataset: http://archive.ics.uci.edu/ml/datasets/Flags
+
+### Random Forests
+- Bagging: Every time a decision tree is made, it is created using a different subset, with replacement, of the points in the training set. 
+    - Because we’re picking these rows with replacement, there’s no need to shrink our bagged training set from 1000 rows to 100. We can pick 1000 rows at random. 
+    - Changing the features that we use: a randomly selected subset of features are considered as candidates for the best splitting feature.
+    - If we have many features: A good rule of thumb is to randomly select the square root of the total number of features
+- Random Forest in Scikit-learn: RandomForestClassifier()
