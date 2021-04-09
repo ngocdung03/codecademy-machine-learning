@@ -93,10 +93,36 @@ print(classifier.score(test_data, test_labels))
     - potentially overfit -> prune the tree
 - Flags dataset: http://archive.ics.uci.edu/ml/datasets/Flags
 
-### Random Forests
+##### Random Forests
 - Bagging: Every time a decision tree is made, it is created using a different subset, with replacement, of the points in the training set. 
     - Because we’re picking these rows with replacement, there’s no need to shrink our bagged training set from 1000 rows to 100. We can pick 1000 rows at random. 
     - Changing the features that we use: a randomly selected subset of features are considered as candidates for the best splitting feature.
     - If we have many features: A good rule of thumb is to randomly select the square root of the total number of features
 - Random Forest in Scikit-learn: RandomForestClassifier()
 - Data on income: https://archive.ics.uci.edu/ml/datasets/census%20income
+
+##### K-means clustering
+- Two questions arise:   
+    - How many groups do we choose?
+    - How do we define similarity? 
+- The “Means” refers to the average distance of data to each cluster center, also known as the centroid, which we are trying to minimize.
+- Iterative approach:
+    - Place k random centroids for the initial clusters.
+    - Assign data samples to the nearest centroid.
+    - Update centroids based on the above-assigned data samples.
+    - Repeat Steps 2 and 3 until convergence (when points don’t move between clusters and centroids stabilize).
+- Argmin(distances) would return the index of the lowest corresponding distance
+- Implementing K-Means: Scikit-Learn
+```py
+from sklearn.cluster import KMeans
+model = KMeans(n_clusters = k)
+model.fit(X)
+model.predict(X)
+```
+- Evaluation:
+    - Cross-tabulations (by Pandas library) enable you to examine relationships within the data that might not be readily apparent when analyzing total survey responses.
+- Good clustering results in tight clusters, meaning that the samples in each cluster are bunched together. How spread out the clusters are is measured by inertia
+    - Elbow method: choose an “elbow” in the inertia plot - when inertia begins to decrease more slowly.
+```py
+print(model.intertia_)
+```
