@@ -99,3 +99,4 @@ print(classifier.score(test_data, test_labels))
     - Changing the features that we use: a randomly selected subset of features are considered as candidates for the best splitting feature.
     - If we have many features: A good rule of thumb is to randomly select the square root of the total number of features
 - Random Forest in Scikit-learn: RandomForestClassifier()
+- Data on income: https://archive.ics.uci.edu/ml/datasets/census%20income
