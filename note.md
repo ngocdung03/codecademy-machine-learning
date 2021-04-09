@@ -134,3 +134,10 @@ print(model.intertia_)
     - 1.3 The next cluster centroid is picked according to a probability proportional to the distance of each point to its nearest cluster centroid. This makes it likely for the next cluster centroid to be far away from the already initialized centroids.
     - Repeat 1.2 - 1.3 until k centroids are chosen
 - K-Means++ using Scikit-Learn: is actually default in sci-kit learn: `test=KMeans(init='k-means++, n_clusters=6)`
+
+##### Perceptrons
+- perceptron is an artificial neuron that can make a simple decision. Let’s implement one from scratch in Python!
+- three main components:
+    - Inputs: Each input corresponds to a feature.
+    - Weights: Each input also has a weight which assigns a certain amount of importance to the input.
+    - Output
