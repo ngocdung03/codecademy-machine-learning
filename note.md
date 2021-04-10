@@ -141,3 +141,4 @@ print(model.intertia_)
     - Inputs: Each input corresponds to a feature.
     - Weights: Each input also has a weight which assigns a certain amount of importance to the input.
     - Output
+- training error = actual label - predicted  label
