@@ -142,3 +142,5 @@ print(model.intertia_)
     - Weights: Each input also has a weight which assigns a certain amount of importance to the input.
     - Output
 - training error = actual label - predicted  label
+- The Perceptron Algorithm: optimally tweak the weights and nudge the perceptron towards zero error: weight = weight + (error*input)
+
