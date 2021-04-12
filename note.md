@@ -153,4 +153,10 @@ print(model.intertia_)
     - intercept = -self.weights[2]/self.weights[1]
 - Non-linear decision boundary: By increasing the number of features and perceptrons, we can give rise to the Multilayer Perceptrons, also known as Neural Networks, which can solve much more complicated problems.
 
-
+##### Minimax
+- Tic-tac-toe: An essential step in the minimax function is evaluating the strength of a leaf. If the game gets to a certain leaf, we want to know if that was a better outcome for player "X" or for player "O".
+    - evaluation function: a leaf where player "X" wins evaluates to a 1, a leaf where player "O" wins evaluates to a -1, and a leaf that is a tie evaluates to 0.
+    - First, we need to detect whether a board is a leaf — if either player has won, or if there are no more open spaces
+    - State of the board: X won, O won, or tie
+- ["Minimax algorithm - evaluating leaves.docx"]
+- One of the central ideas behind the minimax algorithm is the idea of exploring future hypothetical board states.
