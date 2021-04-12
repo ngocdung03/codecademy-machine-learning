@@ -160,3 +160,22 @@ print(model.intertia_)
     - State of the board: X won, O won, or tie
 - ["Minimax algorithm - evaluating leaves.docx"]
 - One of the central ideas behind the minimax algorithm is the idea of exploring future hypothetical board states.
+
+##### Advanced Minimax
+- There are games, like Chess, that have much larger trees. There are 20 different options for the first move in Chess, compared to 9 in Tic-Tac-Toe. On top of that, the number of possible moves often increases as a chess game progresses. Traversing to the leaves of a Chess tree simply takes too much computational power.
+- Being able to stop before reaching the leaves is critically important for the efficiency of this algorithm. It could take literal days to reach the leaves of a game of chess. Stopping after only a few levels limits the algorithm’s understanding of the game, but it makes the runtime realistic.
+- we’ll add another parameter to our function called depth. Every time we make a recursive call, we’ll decrease depth by 1 like so:
+```py
+def minimax(input_board, minimizing_player, depth):
+  # Base Case
+  if game_is over(input_bopard):
+    return ...
+  else:
+    # …
+    # Recursive Call
+    hypothetical_value = minimax(new_board, True, depth - 1)[0]
+ ```
+ - Alpha-beta pruning: In order to traverse farther down the tree without dramatically increasing the runtime: ignore parts of the tree that we know will be dead ends.
+    - alpha keeps track of the minimum score the maximizing player can possibly get. It starts at negative infinity and gets updated as that minimum score increases.
+    - beta represents the maximum score the minimizing player can possibly get. It starts at positive infinity and will decrease as that maximum possible score decreases.
+    - For any node, if alpha is greater than or equal to beta, that means that we can stop looking through that node’s children.
