@@ -143,4 +143,14 @@ print(model.intertia_)
     - Output
 - training error = actual label - predicted  label
 - The Perceptron Algorithm: optimally tweak the weights and nudge the perceptron towards zero error: weight = weight + (error*input)
+- Bias weight: there are times when a minor adjustment is needed for the perceptron to be more accurate. 
+    - Consider 2 small changes: Add a 1 to the set of inputs (now there are 3 inputs instead of 2) OR Add a bias weight to the list of weights (now there are 3 weights instead of 2).
+    ```py
+    weighted sum = x1w1 + x2w2 + ... + xnwn + 1*wb
+    ```
+- Visualizing perceptron by a line:
+    - slope = -self.weights[0]/self.weights[1]
+    - intercept = -self.weights[2]/self.weights[1]
+- Non-linear decision boundary: By increasing the number of features and perceptrons, we can give rise to the Multilayer Perceptrons, also known as Neural Networks, which can solve much more complicated problems.
+
 
